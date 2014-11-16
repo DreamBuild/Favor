@@ -1,29 +1,27 @@
 package favor.domain.model;
 
 
+import favor.metadata.model.TableMetadata;
+
 /**
  * Created by Joyor on 2014-09-06.
  */
 public class PropertyTableMeta
 {
-    private final String tableName;
-    private final String description;
+    private final TableMetadata tableMetadata;
 
-    public PropertyTableMeta(String tableName, String description)
+    public PropertyTableMeta(String databaseName, String tableName, String description)
     {
-        this.tableName = tableName;
-        this.description = description;
+        this.tableMetadata = new TableMetadata(databaseName, tableName, description);
     }
 
-    public PropertyTableMeta(String tableName)
+    public PropertyTableMeta(String databaseName, String tableName)
     {
-        this(tableName, null);
+        this(databaseName, tableName, null);
     }
 
-    public String getTableName()
+    public TableMetadata getTableMetadata()
     {
-        return this.tableName;
+        return this.tableMetadata;
     }
-
-    public String getDescription(){return this.description;}
 }

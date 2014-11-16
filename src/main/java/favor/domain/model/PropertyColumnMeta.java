@@ -1,24 +1,14 @@
 package favor.domain.model;
 
+import favor.metadata.model.ColumnMetadata;
+
 /**
  * Created by Joyor on 2014-09-06.
  */
 public class PropertyColumnMeta
 {
-    private String columnName;
-    private DataKind dataKind;
+    private ColumnMetadata columnMetadata;
     private String modelName;
-    private String description;
-
-    public String getColumnName()
-    {
-        return this.columnName;
-    }
-
-    public void setColumnName(String columnName)
-    {
-        this.columnName = columnName;
-    }
 
     public String getModelName()
     {
@@ -30,23 +20,13 @@ public class PropertyColumnMeta
         this.modelName = modelName;
     }
 
-    public DataKind getDataKind()
+    public void setColumnMetadata(ColumnMetadata columnMetadata)
     {
-        return this.dataKind;
+        this.columnMetadata = columnMetadata;
     }
 
-    public void setDataKind(DataKind dataKind)
+    public ColumnMetadata getColumnMetadata()
     {
-        this.dataKind = dataKind;
-    }
-
-    public String getDescription()
-    {
-        return this.description;
-    }
-
-    public void setDescription(String description)
-    {
-        this.description = description;
+        return this.columnMetadata;
     }
 }

@@ -7,15 +7,28 @@ import favor.domain.model.PropertyTableMeta;
  */
 public class TableMetadata
 {
-    private PropertyTableMeta propertyTableMeta;
+    private final String databaseName;
+    private final String tableName;
+    private final String description;
 
-    public void setPropertyTableMeta(PropertyTableMeta meta)
+    public TableMetadata(String databaseName, String tableName, String description)
     {
-        this.propertyTableMeta = meta;
+        this.databaseName = databaseName;
+        this.tableName = tableName;
+        this.description = description;
     }
 
-    public PropertyTableMeta getPropertyTableMeta()
+    public TableMetadata(String databaseName, String tableName)
     {
-        return this.propertyTableMeta;
+        this(databaseName, tableName, null);
     }
+
+    public String getTableName()
+    {
+        return this.tableName;
+    }
+
+    public String getDescription(){return this.description;}
+
+    public String getDatabaseName(){return this.databaseName;}
 }

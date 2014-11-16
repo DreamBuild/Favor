@@ -14,7 +14,7 @@ public interface TableService
 
    boolean remove(TableMetadata table);
 
-   List<Table> list();
+   List<TableMetadata> list();
 
    Table query(TableMetadata tableMetadata);
 }
